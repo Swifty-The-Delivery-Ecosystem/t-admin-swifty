@@ -62,10 +62,10 @@ const VendorCard = (vendor) => {
   return (
     <div className="border-4 w-fit md:p-6 p-4 m-2 bg-white rounded-lg shadow-md py-auto content-center flex flex-col items-center justify-between ">
       <div className="text-gray-600">
-        Owner Name : {vendor.vendor.ownerName}
+        Owner Name : {vendor.vendor.owner}
       </div>
       <div className="text-gray-600">
-        Restaurant Name : {vendor.vendor.restaurantName}
+        Restaurant Name : {vendor.vendor.name}
       </div>
       <div className="text-gray-600">Location : {vendor.vendor.location}</div>
       <div className="text-gray-600">Phone Number : {vendor.vendor.phone}</div>
