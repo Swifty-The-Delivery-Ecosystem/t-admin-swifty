@@ -31,6 +31,7 @@ export const VendorProvider = ({ children }) => {
       );
 
       const result = await response.json();
+      console.log(result.data)
       setVendors(result.data.newVendors);
     } catch (e) {
       console.log(e);
@@ -65,7 +66,13 @@ export const VendorProvider = ({ children }) => {
 
   useEffect(() => {
     getAllVendors();
+    handleVendorFetch();
+     setInterval(() => {
+     getAllVendors();
+      handleVendorFetch();
+    }, 20000);
   }, []);
+ 
 
   return (
     <VendorContext.Provider value={contextValue}>
