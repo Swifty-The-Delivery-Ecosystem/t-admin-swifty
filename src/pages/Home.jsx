@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext } from "react";
 import { useVendors } from "../context/vendorContext";
 import VendorCard from "../components/VendorCard";
+import RegisteredVendorCard from "../components/RegisteredVendorsCard";
 
 const Home = () => {
   const { vendors, allVendors } = useVendors();
@@ -50,7 +51,7 @@ const Home = () => {
           </div>
           <div className="flex flex-wrap justify-center">
             {allVendors.map((vendor) => {
-              return <VendorCard vendor={vendor} />;
+              return <RegisteredVendorCard vendor={vendor} />;
             })}
           </div>
         </div>
