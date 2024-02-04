@@ -42,7 +42,8 @@ const Home = () => {
             New Vendors
           </div>
           <div className="flex justify-center">
-            {vendors.map((vendor) => {
+            {
+            vendors && vendors.map((vendor) => {
               return <VendorCard vendor={vendor} />;
             })}
           </div>
