@@ -17,63 +17,6 @@ export const VendorProvider = ({ children }) => {
     setallVendors,
   };
 
-  const handleVendorFetch = async () => {
-    try {
-      const response = await fetch(
-        "https://auth-six-pi.vercel.app/api/v1/auth/admins/new_vendors",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.token,
-          },
-        }
-      );
-
-      const result = await response.json();
-      console.log(result.data)
-      setVendors(result.data.newVendors);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const token = localStorage.getItem("token");
-  useEffect(() => {
-    handleVendorFetch();
-  }, []);
-
-  const getAllVendors = async () => {
-    try {
-      const response = await fetch(
-        "https://auth-six-pi.vercel.app/api/v1/auth/admins/vendors/view",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.token,
-          },
-        }
-      );
-
-      const result = await response.json();
-      setallVendors(result.vendors);
-      console.log("hell yeah", result.vendors);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  useEffect(() => {
-    getAllVendors();
-    handleVendorFetch();
-     setInterval(() => {
-     getAllVendors();
-      handleVendorFetch();
-    }, 20000);
-  }, []);
- 
-
   return (
     <VendorContext.Provider value={contextValue}>
       {children}

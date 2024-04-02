@@ -42,18 +42,13 @@ const Home = () => {
             New Vendors
           </div>
           <div className="flex justify-center">
-            {
-            vendors && vendors.map((vendor) => {
-              return <VendorCard vendor={vendor} />;
-            })}
+            <VendorCard />
           </div>
           <div className="py-4 px-10 font-bold text-2xl text-center">
             Registered Vendors
           </div>
           <div className="flex flex-wrap justify-center">
-            {allVendors.map((vendor) => {
-              return <RegisteredVendorCard vendor={vendor} />;
-            })}
+            <RegisteredVendorCard />
           </div>
         </div>
       </div>
